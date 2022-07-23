@@ -1,0 +1,23 @@
+.mainnav {
+  margin-left: 30px;
+}
+
+.navitem {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.active {
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+  text-decoration: none;
+  color: #e82e38;
+}
