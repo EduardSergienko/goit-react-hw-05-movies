@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Appbar from './Appbar/Appbar';
 import { Home } from 'pages/Home';
-import { Movies } from './Movies/Movies';
+import { Movies } from 'pages/Movies';
 export const App = () => {
   return (
     <>

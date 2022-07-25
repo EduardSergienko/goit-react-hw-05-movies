@@ -1,6 +1,6 @@
 import { fetchTrandingFilms } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
-import { TrendingMovieItem } from 'components/TrendingMovieItem/TrendingMovieItem';
+import { MovieItem } from 'components/MovieItem/MovieItem';
 export function Home() {
   const [moviesData, setMoviesData] = useState([]);
   //   const [page, setPage] = useState();
@@ -17,7 +17,7 @@ export function Home() {
   return (
     <ul>
       {moviesData.map(({ id, title }) => {
-        return <TrendingMovieItem key={id} filmTitle={title} />;
+        return <MovieItem key={id} filmTitle={title} />;
       })}
     </ul>
   );
