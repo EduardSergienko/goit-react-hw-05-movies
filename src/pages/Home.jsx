@@ -4,12 +4,11 @@ import { TrendingMovieItem } from 'components/TrendingMovieItem/TrendingMovieIte
 export function Home() {
   const [moviesData, setMoviesData] = useState([]);
   //   const [page, setPage] = useState();
-  //   console.log(page);
-  //   console.log(moviesData);
+
   useEffect(() => {
     async function showTrandingFilms() {
       const { data } = await fetchTrandingFilms();
-      console.log(data);
+
       setMoviesData(data.results);
       //   setPage(data.page);
     }
