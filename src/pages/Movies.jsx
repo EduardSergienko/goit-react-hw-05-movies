@@ -24,7 +24,6 @@ export function Movies() {
   }, [formQuery]);
 
   const formData = data => {
-    console.log(data);
     setFormQuery(data);
   };
 

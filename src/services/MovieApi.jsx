@@ -22,3 +22,9 @@ export async function getMovieDetails(id) {
   const API_KEY = 'api_key=5f364d2fc6b25c805674b50a1c63d59e';
   return await axios.get(`${BASE_URL}${id}?${API_KEY}&language=en-US`);
 }
+
+export async function getCastDetails(id) {
+  const BASE_URL = 'https://api.themoviedb.org/3/movie/';
+  const API_KEY = 'api_key=5f364d2fc6b25c805674b50a1c63d59e';
+  return await axios.get(`${BASE_URL}${id}/credits?${API_KEY}&language=en-US`);
+}
