@@ -8,16 +8,18 @@ export function Home() {
 
   useEffect(() => {
     async function showTrandingFilms() {
-      const { data } = await fetchTrandingFilms();
+      try {
+        const { data } = await fetchTrandingFilms();
 
-      setMoviesData(data.results);
+        setMoviesData(data.results);
+      } catch (error) {}
     }
     showTrandingFilms();
   }, []);
   return (
     <MovieList>
       {moviesData.map(({ id, title }) => {
-        return <MovieItem key={id} filmTitle={title} />;
+        return <MovieItem key={id} filmTitle={title} movieId={id} />;
       })}
     </MovieList>
   );

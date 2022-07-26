@@ -14,9 +14,11 @@ export function Movies() {
       if (formQuery === '') {
         return;
       }
-      const { data } = await movieSearching(formQuery);
+      try {
+        const { data } = await movieSearching(formQuery);
 
-      setMoviesData(data.results);
+        setMoviesData(data.results);
+      } catch (error) {}
     }
     searchMovie();
   }, [formQuery]);
@@ -31,7 +33,7 @@ export function Movies() {
       <SearchBar onSubmit={formData} />
       <MovieList>
         {moviesData.map(({ id, title }) => {
-          return <MovieItem key={id} filmTitle={title} />;
+          return <MovieItem key={id} filmTitle={title} movieId={id} />;
         })}
       </MovieList>
     </>
