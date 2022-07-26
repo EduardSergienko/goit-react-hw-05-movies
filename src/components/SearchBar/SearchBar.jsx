@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Notiflix from 'notiflix';
+import PropTypes from 'prop-types';
 export function SearchBar({ onSubmit }) {
   const [serachBarQuery, setSerachBarQuery] = useState('');
 
@@ -24,3 +25,6 @@ export function SearchBar({ onSubmit }) {
     </form>
   );
 }
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
