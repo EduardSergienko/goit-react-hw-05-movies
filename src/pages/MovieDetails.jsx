@@ -9,7 +9,7 @@ export function MovieDetails() {
   const [genres, setGenres] = useState([]);
   const [poster, setPoster] = useState('');
   const { movieId } = useParams();
-  console.log(movieDetails);
+
   useEffect(() => {
     if (movieId === undefined) {
       return;
@@ -30,7 +30,7 @@ export function MovieDetails() {
 
   return (
     <>
-      {movieDetails !== {} && (
+      {poster !== '' && (
         <MovieInfo
           moviePoster={poster}
           movieTitle={movieDetails.title}
