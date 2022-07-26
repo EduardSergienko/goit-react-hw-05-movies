@@ -1,19 +1,21 @@
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { useState, useEffect } from 'react';
 import { movieSearching } from 'services/MovieApi';
-import { SearchingMovieList } from 'components/SearchingMovieList/SearchingMovieList';
+
+import { MovieList } from 'components/MovieList/MovieList';
+import { MovieItem } from 'components/MovieItem/MovieItem';
 
 export function Movies() {
   const [formQuery, setFormQuery] = useState('');
   const [moviesData, setMoviesData] = useState([]);
-  console.log(moviesData);
+
   useEffect(() => {
     async function searchMovie() {
       if (formQuery === '') {
         return;
       }
       const { data } = await movieSearching(formQuery);
-      //   console.log(data);
+
       setMoviesData(data.results);
     }
     searchMovie();
@@ -27,7 +29,11 @@ export function Movies() {
   return (
     <>
       <SearchBar onSubmit={formData} />
-      <SearchingMovieList moviesdata={moviesData} />
+      <MovieList>
+        {moviesData.map(({ id, title }) => {
+          return <MovieItem key={id} filmTitle={title} />;
+        })}
+      </MovieList>
     </>
   );
 }

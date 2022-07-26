@@ -1,6 +1,7 @@
 import { fetchTrandingFilms } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { MovieItem } from 'components/MovieItem/MovieItem';
+import { MovieList } from 'components/MovieList/MovieList';
 export function Home() {
   const [moviesData, setMoviesData] = useState([]);
   //   const [page, setPage] = useState();
@@ -15,10 +16,10 @@ export function Home() {
     showTrandingFilms();
   }, []);
   return (
-    <ul>
+    <MovieList>
       {moviesData.map(({ id, title }) => {
         return <MovieItem key={id} filmTitle={title} />;
       })}
-    </ul>
+    </MovieList>
   );
 }
