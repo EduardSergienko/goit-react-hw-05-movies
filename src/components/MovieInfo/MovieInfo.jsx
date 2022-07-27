@@ -9,7 +9,7 @@ export function MovieInfo({
 }) {
   return (
     <div className={styles.movieInfoWrap}>
-      <div>
+      <div className={styles.posterWrap}>
         <img
           className={styles.movieInfoPoster}
           src={`https://image.tmdb.org/t/p/original${moviePoster}`}
@@ -18,10 +18,10 @@ export function MovieInfo({
       </div>
       <div>
         <h2>{movieTitle}</h2>
-        <p>User Score: {movieRait}</p>
-        <p>Overview</p>
-        <p>{movieOverview}</p>
-        <p>Genres</p>
+        <p className={styles.overview}>User Score: {movieRait}</p>
+        <p className={styles.overview}>Overview</p>
+        <p className={styles.overviewContent}>{movieOverview}</p>
+        <p className={styles.overview}>Genres</p>
         <p>{movieGenres}</p>
       </div>
     </div>

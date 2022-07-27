@@ -18,6 +18,9 @@ export function Home() {
   }, []);
   return (
     <MovieList>
+      <>
+        <h2>Trendind today</h2>
+      </>
       {moviesData.map(({ id, title }) => {
         return <MovieItem key={id} filmTitle={title} movieId={id} />;
       })}

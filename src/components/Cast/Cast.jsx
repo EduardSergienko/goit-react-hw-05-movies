@@ -28,16 +28,18 @@ export function Cast() {
     <>
       {dataId !== undefined && (
         <>
-          {castData.map(({ id, name, character, profile_path }) => {
-            return (
-              <CastList
-                key={id}
-                actorName={name}
-                character={character}
-                actorPhoto={profile_path}
-              />
-            );
-          })}
+          {castData
+            .slice(0, 14)
+            .map(({ id, name, character, profile_path }) => {
+              return (
+                <CastList
+                  key={id}
+                  actorName={name}
+                  character={character}
+                  actorPhoto={profile_path}
+                />
+              );
+            })}
         </>
       )}
     </>

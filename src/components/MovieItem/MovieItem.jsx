@@ -1,10 +1,12 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'react-router-dom';
+import styles from './MovieItem.module.scss';
 import PropTypes from 'prop-types';
 export const MovieItem = ({ filmTitle, movieId }) => {
   return (
-    <li>
-      <Link to={`/movies/${movieId}`}> {filmTitle}</Link>
+    <li className={styles.item}>
+      <Link className={styles.itemLink} to={`/movies/${movieId}`}>
+        {filmTitle}
+      </Link>
     </li>
   );
 };
