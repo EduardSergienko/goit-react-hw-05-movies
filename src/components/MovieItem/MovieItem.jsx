@@ -13,4 +13,5 @@ export const MovieItem = ({ filmTitle, movieId }) => {
 
 MovieItem.propTypes = {
   filmTitle: PropTypes.string.isRequired,
+  movieId: PropTypes.number.isRequired,
 };

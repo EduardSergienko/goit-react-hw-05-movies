@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
-export default function Navigation(params) {
+export default function Navigation() {
   return (
     <nav className={styles.mainnav}>
       <NavLink

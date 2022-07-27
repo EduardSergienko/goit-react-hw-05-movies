@@ -2,6 +2,7 @@ import { getCastDetails } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CastList } from 'components/CastList/CastList';
+import PropTypes from 'prop-types';
 
 export function Cast() {
   const { movieId } = useParams();
@@ -45,3 +46,6 @@ export function Cast() {
     </>
   );
 }
+Cast.propTypes = {
+  key: PropTypes.number,
+};

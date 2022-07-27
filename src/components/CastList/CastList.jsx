@@ -1,5 +1,5 @@
 import styles from './CastList.module.scss';
-
+import PropTypes from 'prop-types';
 export function CastList({ actorName, character, actorPhoto }) {
   return (
     <ul>
@@ -16,3 +16,8 @@ export function CastList({ actorName, character, actorPhoto }) {
     </ul>
   );
 }
+CastList.propTypes = {
+  actorName: PropTypes.string.isRequired,
+  character: PropTypes.string.isRequired,
+  actorPhoto: PropTypes.string,
+};
