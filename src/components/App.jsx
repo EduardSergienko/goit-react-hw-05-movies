@@ -2,12 +2,14 @@ import { lazy, Suspense } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import Appbar from './Appbar/Appbar';
+// import { createAsyncPage } from 'services/createAsyncPage';
 
 const Home = lazy(() => {
   return import('../pages/Home').then(module => {
     return { default: module.Home };
   });
 });
+
 const Movies = lazy(() => {
   return import('../pages/Movies').then(module => {
     return { default: module.Movies };
