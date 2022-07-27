@@ -6,8 +6,7 @@ import { CastList } from 'components/CastList/CastList';
 export function Cast() {
   const { movieId } = useParams();
   const [castData, setCastData] = useState([]);
-
-  console.log(castData);
+  const [dataId, setDataId] = useState(undefined);
 
   useEffect(() => {
     if (movieId === null) {
@@ -16,6 +15,8 @@ export function Cast() {
     async function getCredits() {
       try {
         const { data } = await getCastDetails(movieId);
+        console.log(data);
+        setDataId(data.id);
         setCastData(data.cast);
       } catch (error) {
         console.log(error);
@@ -25,7 +26,7 @@ export function Cast() {
   }, [movieId]);
   return (
     <>
-      {castData !== [] && (
+      {dataId !== undefined && (
         <>
           {castData.map(({ id, name, character, profile_path }) => {
             return (

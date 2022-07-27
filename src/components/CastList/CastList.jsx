@@ -6,7 +6,7 @@ export function CastList({ actorName, character, actorPhoto }) {
       <li>
         <img
           className={styles.profileImg}
-          src={`https://image.tmdb.org/t/p/w500${actorPhoto}`}
+          src={`https://image.tmdb.org/t/p/original${actorPhoto}`}
           alt=""
         />
 
