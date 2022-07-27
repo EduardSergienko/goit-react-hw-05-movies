@@ -6,6 +6,7 @@ export function MovieInfo({
   movieRait,
   moviePoster,
   movieGenres,
+  movieDate,
 }) {
   return (
     <div className={styles.movieInfoWrap}>
@@ -17,7 +18,9 @@ export function MovieInfo({
         />
       </div>
       <div>
-        <h2>{movieTitle}</h2>
+        <h2>
+          {movieTitle} ({movieDate})
+        </h2>
         <p className={styles.overview}>User Score: {movieRait}</p>
         <p className={styles.overview}>Overview</p>
         <p className={styles.overviewContent}>{movieOverview}</p>

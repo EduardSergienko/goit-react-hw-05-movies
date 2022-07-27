@@ -24,16 +24,24 @@ export function Reviews() {
   }, [movieId]);
   return (
     <>
-      {rewData.length > 0 ? (
+      {rewData.length !== 0 && (
         <>
-          {rewData.map(({ id, author, content }) => {
-            return (
-              <ReviewsList key={id} authorName={author} rewContent={content} />
-            );
-          })}
+          {rewData.length > 0 ? (
+            <>
+              {rewData.map(({ id, author, content }) => {
+                return (
+                  <ReviewsList
+                    key={id}
+                    authorName={author}
+                    rewContent={content}
+                  />
+                );
+              })}
+            </>
+          ) : (
+            <div> We don't have any reviews for this movie</div>
+          )}
         </>
-      ) : (
-        <div> We don't have any reviews for this movie</div>
       )}
     </>
   );

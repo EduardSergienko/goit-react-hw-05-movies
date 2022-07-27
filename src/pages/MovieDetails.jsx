@@ -1,5 +1,5 @@
 import { getMovieDetails } from 'services/MovieApi';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useParams, Outlet } from 'react-router-dom';
 import { AdditionalInfo } from 'components/AdditionalInfo/AdditionalInfo';
@@ -17,7 +17,7 @@ export function MovieDetails() {
     async function showFilmDetails() {
       try {
         const { data } = await getMovieDetails(movieId);
-
+        console.log(data);
         setmMvieDetails(data);
         setPoster(data.poster_path);
         setGenres(data.genres);
@@ -37,11 +37,14 @@ export function MovieDetails() {
           movieOverview={movieDetails.overview}
           movieRait={movieDetails.vote_average}
           movieGenres={movieGenres.join(', ')}
+          movieDate={movieDetails.release_date.slice(0, 4)}
         />
       )}
 
       <AdditionalInfo />
-      <Outlet />
+      <Suspense fallback={<div>Loading..</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }
