@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/Cast.9690a906.chunk.css","mappings":"AAAA,4BAEE,aACA,mBAFA,WAEA","sources":["components/CastList/CastList.module.scss"],"sourcesContent":[".profileImg {\n  width: 100px;\n  height: 120px;\n  object-fit: contain;\n}\n"],"names":[],"sourceRoot":""}
