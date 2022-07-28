@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './AdditionalInfo.module.scss';
-
+import PropTypes from 'prop-types';
 export function AdditionalInfo({ location }) {
   console.log(location);
   return (
@@ -25,3 +25,11 @@ export function AdditionalInfo({ location }) {
     </div>
   );
 }
+
+AdditionalInfo.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    search: PropTypes.string.isRequired,
+    state: PropTypes.bool,
+  }).isRequired,
+};

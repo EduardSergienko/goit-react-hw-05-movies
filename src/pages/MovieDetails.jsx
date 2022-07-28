@@ -17,7 +17,7 @@ export default function MovieDetails() {
     async function showFilmDetails() {
       try {
         const { data } = await getMovieDetails(movieId);
-        console.log(data);
+
         setmMvieDetails(data);
         setPoster(data.poster_path);
         setGenres(data.genres);

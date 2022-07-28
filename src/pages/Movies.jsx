@@ -11,7 +11,6 @@ export default function Movies() {
   const [moviesData, setMoviesData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
-  console.log(query);
 
   useEffect(() => {
     async function searchMovie() {
@@ -34,7 +33,7 @@ export default function Movies() {
   }, [query]);
 
   const formData = data => {
-    setSearchParams({ query: data });
+    setSearchParams({ query: data.toLowerCase().trim() });
   };
 
   return (

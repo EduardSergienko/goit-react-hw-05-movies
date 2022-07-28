@@ -3,7 +3,7 @@ import styles from './MovieItem.module.scss';
 import PropTypes from 'prop-types';
 export const MovieItem = ({ filmTitle, movieId }) => {
   const location = useLocation();
-  console.log(location);
+
   return (
     <li className={styles.item}>
       <Link
