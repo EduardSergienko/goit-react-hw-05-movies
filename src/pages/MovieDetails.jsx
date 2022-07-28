@@ -4,7 +4,7 @@ import { MovieInfo } from 'components/MovieInfo/MovieInfo';
 import { useParams, Outlet } from 'react-router-dom';
 import { AdditionalInfo } from 'components/AdditionalInfo/AdditionalInfo';
 
-export function MovieDetails() {
+export default function MovieDetails() {
   const [movieDetails, setmMvieDetails] = useState({});
   const [genres, setGenres] = useState([]);
   const [poster, setPoster] = useState('');

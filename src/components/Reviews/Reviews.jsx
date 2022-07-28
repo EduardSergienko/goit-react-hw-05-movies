@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { ReviewsList } from 'components/ReviewsList/ReviewsList';
 import PropTypes from 'prop-types';
 
-export function Reviews() {
+export default function Reviews() {
   const { movieId } = useParams();
   const [rewData, setRewData] = useState(null);
   useEffect(() => {

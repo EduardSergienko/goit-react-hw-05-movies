@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { MovieList } from 'components/MovieList/MovieList';
 import { MovieItem } from 'components/MovieItem/MovieItem';
 
-export function Movies() {
+export default function Movies() {
   const [formQuery, setFormQuery] = useState('');
   const [moviesData, setMoviesData] = useState([]);
   console.log(moviesData);

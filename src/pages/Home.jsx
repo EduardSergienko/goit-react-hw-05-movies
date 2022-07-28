@@ -4,7 +4,7 @@ import { MovieItem } from 'components/MovieItem/MovieItem';
 import { MovieList } from 'components/MovieList/MovieList';
 import PropTypes from 'prop-types';
 
-export function Home() {
+export default function Home() {
   const [moviesData, setMoviesData] = useState([]);
 
   useEffect(() => {

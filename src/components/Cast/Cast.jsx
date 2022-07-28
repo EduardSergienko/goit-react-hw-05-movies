@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CastList } from 'components/CastList/CastList';
 import PropTypes from 'prop-types';
 
-export function Cast() {
+export default function Cast() {
   const { movieId } = useParams();
   const [castData, setCastData] = useState([]);
   const [dataId, setDataId] = useState(undefined);

@@ -2,34 +2,19 @@ import { lazy, Suspense } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import Appbar from './Appbar/Appbar';
-// import { createAsyncPage } from 'services/createAsyncPage';
 
-const Home = lazy(() => {
-  return import('../pages/Home').then(module => {
-    return { default: module.Home };
-  });
-});
+const Home = lazy(() => import('../pages/Home' /* webpackChunkName: "Home" */));
+const Movies = lazy(() =>
+  import('../pages/Movies' /* webpackChunkName: "Movies" */)
+);
+const MovieDetails = lazy(() =>
+  import('../pages/MovieDetails' /* webpackChunkName: "MovieDetails" */)
+);
+const Cast = lazy(() => import('./Cast/Cast' /* webpackChunkName: "Cast" */));
+const Reviews = lazy(() =>
+  import('./Reviews/Reviews' /* webpackChunkName: "Reviews" */)
+);
 
-const Movies = lazy(() => {
-  return import('../pages/Movies').then(module => {
-    return { default: module.Movies };
-  });
-});
-const MovieDetails = lazy(() => {
-  return import('../pages/MovieDetails').then(module => {
-    return { default: module.MovieDetails };
-  });
-});
-const Cast = lazy(() => {
-  return import('./Cast/Cast').then(module => {
-    return { default: module.Cast };
-  });
-});
-const Reviews = lazy(() => {
-  return import('./Reviews/Reviews').then(module => {
-    return { default: module.Reviews };
-  });
-});
 export const App = () => {
   return (
     <>
