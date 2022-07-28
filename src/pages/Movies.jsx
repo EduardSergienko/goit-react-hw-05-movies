@@ -7,28 +7,26 @@ import { MovieItem } from 'components/MovieItem/MovieItem';
 import { useSearchParams } from 'react-router-dom';
 
 export default function Movies() {
-  const [formQuery, setFormQuery] = useState('');
   const [moviesData, setMoviesData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
   console.log(query);
-  console.log(moviesData);
+
   useEffect(() => {
     async function searchMovie() {
-      if (formQuery === '') {
+      if (query === '') {
         return;
       }
       try {
-        const { data } = await movieSearching(formQuery);
+        const { data } = await movieSearching(query);
 
         setMoviesData(data.results);
       } catch (error) {}
     }
     searchMovie();
-  }, [formQuery]);
+  }, [query]);
 
   const formData = data => {
-    setFormQuery(data);
     setSearchParams({ query: data });
   };
 

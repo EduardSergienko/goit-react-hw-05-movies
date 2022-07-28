@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './AdditionalInfo.module.scss';
+
 export function AdditionalInfo() {
   return (
     <div className={styles.additionalWrap}>

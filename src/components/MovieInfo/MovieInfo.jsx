@@ -1,8 +1,8 @@
 import styles from './MovieInfo.module.scss';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
+import { GoBackLink } from 'components/GoBackLink/GoBackLink';
 export function MovieInfo({
   movieTitle,
   movieOverview,
@@ -13,8 +13,8 @@ export function MovieInfo({
 }) {
   const location = useLocation();
   return (
-    <>
-      <Link to={location.state.from}>Go back</Link>
+    <section className={styles.movieDetailsSection}>
+      <GoBackLink to={location.state?.from ?? '/Home'} />
       <div className={styles.movieInfoWrap}>
         <div className={styles.posterWrap}>
           <img
@@ -34,7 +34,7 @@ export function MovieInfo({
           <p>{movieGenres}</p>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
