@@ -11,7 +11,7 @@ export default function Movies() {
   const [moviesData, setMoviesData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
-
+  console.log(query);
   console.log(moviesData);
   useEffect(() => {
     async function searchMovie() {
