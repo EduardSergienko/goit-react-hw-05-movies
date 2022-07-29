@@ -20,5 +20,5 @@ export function CastList({ actorName, character, actorPhoto }) {
 CastList.propTypes = {
   actorName: PropTypes.string.isRequired,
   character: PropTypes.string.isRequired,
-  actorPhoto: PropTypes.string,
+  actorPhoto: PropTypes.string.isRequired,
 };

@@ -37,7 +37,7 @@ export default function MovieDetails() {
             moviePoster={poster}
             movieTitle={movieDetails.title}
             movieOverview={movieDetails.overview}
-            movieRait={movieDetails.vote_average * 10}
+            movieRait={movieDetails.vote_average}
             movieGenres={movieGenres.join(', ')}
             movieDate={movieDetails.release_date.slice(0, 4)}
           />

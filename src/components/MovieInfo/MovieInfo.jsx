@@ -9,7 +9,8 @@ export function MovieInfo({
   movieGenres,
   movieDate,
 }) {
-  let src = `https://image.tmdb.org/t/p/original${moviePoster}`;
+  const movScore = Math.round(movieRait * 10);
+  let src = `https://image.tmdb.org/t/p/w500${moviePoster}`;
   if (moviePoster === null) {
     src =
       'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
@@ -23,7 +24,7 @@ export function MovieInfo({
         <h2>
           {movieTitle} ({movieDate})
         </h2>
-        <p className={styles.overview}>User Score: {movieRait}%</p>
+        <p className={styles.overview}>User Score: {movScore}%</p>
         <p className={styles.overview}>Overview</p>
         <p className={styles.overviewContent}>{movieOverview}</p>
         <p className={styles.overview}>Genres</p>
