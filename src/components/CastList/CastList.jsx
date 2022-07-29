@@ -7,14 +7,12 @@ export function CastList({ actorName, character, actorPhoto }) {
       'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
   }
   return (
-    <ul>
-      <li>
-        <img className={styles.profileImg} src={src} alt="" />
+    <li>
+      <img className={styles.profileImg} src={src} alt="" />
 
-        <p>{actorName}</p>
-        <p> Character: {character}</p>
-      </li>
-    </ul>
+      <p>{actorName}</p>
+      <p> Character: {character}</p>
+    </li>
   );
 }
 CastList.propTypes = {

@@ -2,7 +2,6 @@ import { getCastDetails } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CastList } from 'components/CastList/CastList';
-import PropTypes from 'prop-types';
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -28,7 +27,7 @@ export default function Cast() {
   return (
     <>
       {dataId !== undefined && (
-        <>
+        <ul>
           {castData
             .slice(0, 14)
             .map(({ id, name, character, profile_path }) => {
@@ -41,11 +40,8 @@ export default function Cast() {
                 />
               );
             })}
-        </>
+        </ul>
       )}
     </>
   );
 }
-Cast.propTypes = {
-  key: PropTypes.number,
-};

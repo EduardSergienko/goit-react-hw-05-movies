@@ -2,7 +2,6 @@ import { fetchTrandingFilms } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { MovieItem } from 'components/MovieItem/MovieItem';
 import { MovieList } from 'components/MovieList/MovieList';
-import PropTypes from 'prop-types';
 
 export default function Home() {
   const [moviesData, setMoviesData] = useState([]);
@@ -28,7 +27,3 @@ export default function Home() {
     </MovieList>
   );
 }
-
-Home.propTypes = {
-  key: PropTypes.number,
-};

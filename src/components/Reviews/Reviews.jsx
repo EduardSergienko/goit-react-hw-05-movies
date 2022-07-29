@@ -2,7 +2,6 @@ import { getMovieReviews } from 'services/MovieApi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ReviewsList } from 'components/ReviewsList/ReviewsList';
-import PropTypes from 'prop-types';
 
 export default function Reviews() {
   const { movieId } = useParams();
@@ -31,19 +30,16 @@ export default function Reviews() {
   return (
     <>
       {rewData.length > 0 ? (
-        <>
+        <ul>
           {rewData.map(({ id, author, content }) => {
             return (
               <ReviewsList key={id} authorName={author} rewContent={content} />
             );
           })}
-        </>
+        </ul>
       ) : (
         <div> We don't have any reviews for this movie</div>
       )}
     </>
   );
 }
-Reviews.propTypes = {
-  key: PropTypes.number,
-};

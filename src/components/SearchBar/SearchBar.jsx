@@ -2,11 +2,12 @@ import { useState } from 'react';
 import Notiflix from 'notiflix';
 import PropTypes from 'prop-types';
 import styles from './SearchBar.module.scss';
-export function SearchBar({ onSubmit }) {
-  const [serachBarQuery, setSerachBarQuery] = useState('');
+export function SearchBar({ onSubmit, value }) {
+  const [serachBarQuery, setSerachBarQuery] = useState(value);
 
   const handleInputType = e => {
     setSerachBarQuery(e.currentTarget.value);
+    console.log(e);
   };
 
   const handleFormSubmit = e => {
@@ -21,7 +22,7 @@ export function SearchBar({ onSubmit }) {
   };
   return (
     <form className={styles.searchbar} onSubmit={handleFormSubmit}>
-      <input type="text" onChange={handleInputType} />
+      <input value={serachBarQuery} type="text" onChange={handleInputType} />
       <button type="submit">Search</button>
     </form>
   );
