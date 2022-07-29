@@ -7,7 +7,6 @@ export function SearchBar({ onSubmit, value }) {
 
   const handleInputType = e => {
     setSerachBarQuery(e.currentTarget.value);
-    console.log(e);
   };
 
   const handleFormSubmit = e => {

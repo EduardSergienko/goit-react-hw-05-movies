@@ -28,6 +28,7 @@ export default function MovieDetails() {
 
   const movieGenres = genres.map(gene => gene.name);
   const location = useLocation();
+
   return (
     <>
       {movieDetails && (
