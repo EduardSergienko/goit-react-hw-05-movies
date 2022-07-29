@@ -32,7 +32,7 @@ export default function MovieDetails() {
     <>
       {movieDetails && (
         <>
-          <GoBackLink to={location.state?.from ?? '/Home'} />
+          <GoBackLink />
           <MovieInfo
             moviePoster={poster}
             movieTitle={movieDetails.title}

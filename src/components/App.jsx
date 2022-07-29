@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-
+import { Navigate } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import Appbar from './Appbar/Appbar';
 
@@ -27,7 +27,7 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </>

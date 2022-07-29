@@ -1,18 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from './GoBackLink.module.scss';
-import PropTypes from 'prop-types';
-export function GoBackLink({ to }) {
-  console.log(to);
+
+import { useLocation } from 'react-router-dom';
+
+export function GoBackLink() {
+  const location = useLocation();
   return (
-    <Link className={styles.backLink} to={to}>
+    <Link className={styles.backLink} to={location.state?.from ?? '/Home'}>
       Go back
     </Link>
   );
 }
-GoBackLink.propTypes = {
-  to: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-    search: PropTypes.string.isRequired,
-    state: PropTypes.bool,
-  }).isRequired,
-};
